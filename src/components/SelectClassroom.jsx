@@ -13,7 +13,7 @@ const SelectClassroom = () => {
     axios.defaults.withCredentials = true;
 
     useEffect(() => {
-        axios.get('http://localhost:3000/teacher/classroom')
+        axios.get('https://classroom-server-zlo1.onrender.com/teacher/classroom')
             .then(result => {
                 if (result.data.Result) {
                     setClassroom(result.data.Result)
@@ -25,7 +25,7 @@ const SelectClassroom = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        axios.get('http://localhost:3000/teacher/classlist/:class_id' + class_id + values)
+        axios.get('https://classroom-server-zlo1.onrender.com/teacher/classlist/:class_id' + class_id + values)
             .then(result => {
                 if (result.data.Status) {
                     //localStorage.setItem("valid", true)

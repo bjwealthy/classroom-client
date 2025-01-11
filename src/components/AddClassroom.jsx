@@ -11,7 +11,7 @@ const AddClassroom = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         
-        axios.post('http://localhost:3000/teacher/add_classroom', { classroom, class_id })
+        axios.post('https://classroom-server-zlo1.onrender.com/teacher/add_classroom', { classroom, class_id })
             .then(result => {
                 if (result.data.Status) {
                     navigate('/dashboard/classroom')

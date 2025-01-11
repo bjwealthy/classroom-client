@@ -24,7 +24,7 @@ const AddStudent = () => {
 
     //get the categories/genders in the select
     useEffect(() => {
-        axios.get('http://localhost:3000/teacher/category')
+        axios.get('https://classroom-server-zlo1.onrender.com/teacher/category')
             .then(result => {
                 if(result.data.Result){
                     setCategory(result.data.Result)
@@ -36,7 +36,7 @@ const AddStudent = () => {
 
     //get the classes in the select fields
     useEffect(() => {
-        axios.get('http://localhost:3000/teacher/classroom')
+        axios.get('https://classroom-server-zlo1.onrender.com/teacher/classroom')
             .then(result => {
                 if(result.data.Result){
                     setClassroom(result.data.Result)
@@ -61,7 +61,7 @@ const AddStudent = () => {
         formData.append('classname', student.classname);
         formData.append('class_id', student.class_id);
         
-        axios.post('http://localhost:3000/teacher/add_student', formData)
+        axios.post('https://classroom-server-zlo1.onrender.com/teacher/add_student', formData)
             .then(result => {
                 if(result.data.Status){
                     navigate('/dashboard/student')

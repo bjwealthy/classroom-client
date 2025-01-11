@@ -8,7 +8,7 @@ const Dashboard = () => {
     axios.defaults.withCredentials = true;
 
     const handleLogOut = () => {
-        axios.get('http://localhost:3000/teacher/logout')
+        axios.get('https://classroom-server-zlo1.onrender.com/teacher/logout')
             .then(result => {
                 if (result.data.Status) {
                     localStorage.removeItem("valid")

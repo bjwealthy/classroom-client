@@ -10,7 +10,7 @@ const StudentDetail = () => {
     const {id} = useParams()
 
     useEffect(() => {
-        axios.get('http://localhost:3000/student/studentdetail/'+id)
+        axios.get('https://classroom-server-zlo1.onrender.com/student/studentdetail/'+id)
             .then(result => {
                 setStudent(result.data[0])
             })
@@ -18,7 +18,7 @@ const StudentDetail = () => {
     }, [])
 
     const handleLogout = () => {
-        axios.get('http://localhost:3000/student/logout')
+        axios.get('https://classroom-server-zlo1.onrender.com/student/logout')
             .then(result => {
                 if(result.data.Status){
                     localStorage.removeItem("valid")
@@ -33,7 +33,7 @@ const StudentDetail = () => {
                 <h4>Student Management System</h4>
             </div>
             <div className='d-flex justify-content-center flex-column align-items-center mt-3'>
-                <img src={`http://localhost:3000/Images/`+student.image} className='stu_det_image' /> 
+                <img src={`https://classroom-server-zlo1.onrender.com/Images/`+student.image} className='stu_det_image' /> 
                 <div className='d-flex align-items-center flex-column mt-5'>
                     <h3>Name: {student.name}</h3>
                     <h3>Email: {student.email}</h3>

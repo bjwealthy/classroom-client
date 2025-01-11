@@ -6,7 +6,7 @@ const Classroom = () => {
     console.log(classroom)
 
     useEffect(() => {
-        axios.get('http://localhost:3000/teacher/classroom')
+        axios.get('https://classroom-server-zlo1.onrender.com/teacher/classroom')
             .then(result => {
                 if (result.data.Status) {
                     setClassroom(result.data.Result)

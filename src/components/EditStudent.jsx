@@ -20,7 +20,7 @@ const EditStudent = () => {
     const [classroom, setClassroom] = useState([])
 
     useEffect(() => {
-        axios.get('http://localhost:3000/teacher/category')
+        axios.get('https://classroom-server-zlo1.onrender.com/teacher/category')
             .then(result => {
                 if (result.data.Status) {
                     setCategory(result.data.Result)
@@ -28,7 +28,7 @@ const EditStudent = () => {
                     alert(result.data.Error)
                 }
             }).catch(err => console.log(err))
-        axios.get('http://localhost:3000/teacher/student' + id)
+        axios.get('https://classroom-server-zlo1.onrender.com/teacher/student' + id)
             .then(result => {
                 setStudent({
                     ...student,
@@ -43,7 +43,7 @@ const EditStudent = () => {
     }, [])
 
     useEffect(() => {
-        axios.get('http://localhost:3000/teacher/classroom')
+        axios.get('https://classroom-server-zlo1.onrender.com/teacher/classroom')
             .then(result => {
                 if (result.data.Status) {
                     setClassroom(result.data.Result)
@@ -52,7 +52,7 @@ const EditStudent = () => {
                 }
             }).catch(err => console.log(err))
 
-        axios.get('http://localhost:3000/teacher/student' + id)
+        axios.get('https://classroom-server-zlo1.onrender.com/teacher/student' + id)
             .then(result => {
                 setStudent({
                     ...student,
@@ -68,7 +68,7 @@ const EditStudent = () => {
     
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.put('http://localhost:3000/teacher/edit_student/' + id, student)
+        axios.put('https://classroom-server-zlo1.onrender.com/teacher/edit_student/' + id, student)
             .then(result => {
                 if (result.data.Status) {
                     navigate('/dashboard/student')

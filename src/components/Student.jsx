@@ -7,7 +7,7 @@ const Student = () => {
   const navigate = useNavigate()
 
   useEffect(() => {
-    axios.get('http://localhost:3000/teacher/student/')
+    axios.get('https://classroom-server-zlo1.onrender.com/teacher/student/')
       .then(result => {
         if (result.data.Status) {
           setStudent(result.data.Result)
@@ -18,7 +18,7 @@ const Student = () => {
   }, [])
 
   const handleDelete = (id) => {
-    axios.delete('http://localhost:3000/teacher/delete_student/'+id)
+    axios.delete('https://classroom-server-zlo1.onrender.com/teacher/delete_student/'+id)
     .then(result => {
       if(result.data.Status){
         window.location.reload()
@@ -57,7 +57,7 @@ const Student = () => {
                 <tr key={s.id}>
                   <td>{s.name}</td>
                   <td>
-                    <img src={"http://localhost:3000/images/" + s.image} className="student_image" alt="student_image" />
+                    <img src={"https://classroom-server-zlo1.onrender.com/images/" + s.image} className="student_image" alt="student_image" />
                   </td>
                   <td>{s.email}</td>
                   <td>{s.classname}</td>
