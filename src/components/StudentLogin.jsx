@@ -16,7 +16,8 @@ const StudentLogin = () => {
                 if (result.data.Result) {
                     setClassroom(result.data.Result)
                 } else {
-                    alert("error is", result.data.error)
+                    //alert("error is", result.data.error)
+                    <h3>Error is ${result.data.error}</h3>
                 }
             }).catch(err => console.log(err))
     }, [])
